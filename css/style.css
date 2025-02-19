@@ -144,7 +144,6 @@ p{
 
 /* Initial Section */
 #initial{
-	background-image: url('../images/picture/Home/water-bottle-red-sport-shoes-dumbbells-green-turf.jpg');
 	background-size: cover;
 	background-position: top-center;
 	position: relative;	/*Because we will have an overlay of this section*/
