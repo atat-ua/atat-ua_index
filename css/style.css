@@ -378,21 +378,31 @@ p{
 	html {
 		font-size: 8px;
 	}
+	/* Header */
 	#header .hamburger{
 		height: 40px;
 		width: 40px;
 	}
 	#header .logo img{
-		width: 150px;
+		width: 75px;
 	}
+	/* End Header */
+
+	/* Initial */
 	#initial .initial-bottom .service-item{
 		width: 100%;
 		padding: 15px;
 	}
+	/* End Initial */
+
+	/* About */
 	#about .col-left{
 		width: 150px;
 		height: 250px;
 	}
+	/* End About */
+
+	/* Footer */
 	#footer .logo img{
 		width: 150px;
 	}
@@ -401,7 +411,8 @@ p{
 	}
 	#footer p{
 		font-size: 0.9rem;
-	}	
+	}
+	/* End Footer */
 }
 /*End Media Query for Mobile Phones*/	
 
