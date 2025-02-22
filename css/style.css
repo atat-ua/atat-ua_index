@@ -373,6 +373,38 @@ p{
 
 /*------------------------------ Media Query -----------------------------------*/
 
+/*Mobile Phones*/
+@media (max-width: 480px){
+	html {
+		font-size: 8px;
+	}
+	#header .hamburger{
+		height: 40px;
+		width: 40px;
+	}
+	#header .logo img{
+		width: 150px;
+	}
+	#initial .initial-bottom .service-item{
+		width: 100%;
+		padding: 15px;
+	}
+	#about .col-left{
+		width: 150px;
+		height: 250px;
+	}
+	#footer .logo img{
+		width: 150px;
+	}
+	#footer .logo h2{
+		font-size: 1.2rem;
+	}
+	#footer p{
+		font-size: 0.9rem;
+	}	
+}
+/*End Media Query for Mobile Phones*/	
+
 /*Media Query for Tablet*/
 @media only screen and (min-width:768px){/*that is for the tablet*/
 	h1.section-title{
@@ -444,4 +476,6 @@ p{
 		margin: 1.5%;
 	}
 }
+
+
 /*End Media Query for Desktop*/
