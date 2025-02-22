@@ -374,7 +374,7 @@ p{
 /*------------------------------ Media Query -----------------------------------*/
 
 /*Mobile Phones*/
-@media (max-width: 480px){
+@media only screen and (max-width: 480px){
 	html {
 		font-size: 8px;
 	}
@@ -383,8 +383,8 @@ p{
 		height: 40px;
 		width: 40px;
 	}
-	#header .logo img{
-		width: 75px;
+	#header .nav-bar .logo img{
+		width: 200px;
 	}
 	/* End Header */
 
@@ -392,6 +392,7 @@ p{
 	#initial .initial-bottom .service-item{
 		width: 70%;
 		padding: 15px;
+		margin-bottom: 20px;/*add distance between articles and podcast boxes*/
 	}
 	/* End Initial */
 
