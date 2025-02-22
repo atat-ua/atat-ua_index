@@ -168,13 +168,10 @@ p{
 	margin: 0 auto;
 	padding: 100px 0;
 }
-
 #initial .initial-top{
 	max-width: 500px;
 	margin: 0 auto;
 }
-/* This is the title that if in some moment I would like to included, just uncomment */
-/*
 #initial .section-title{
 	font-size: 4rem;
 	font-weight: 300;
@@ -185,10 +182,6 @@ p{
 	letter-spacing: .2rem;
 	text-align: center;
 }
-#initial .section-title span{
-	color: #00BF63; 
-}
-*/
 #initial .initial-top p{
 	color: black;
 	font-size: 1.4rem;
@@ -383,7 +376,9 @@ p{
 	#initial .initial-bottom .service-item{
 		width: 70%;
 		padding: 15px;
-		margin-bottom: 20px;/*add distance between articles and podcast boxes*/
+	}
+	#initial initial-bottom .service-item:first-child{
+		margin-bottom: 20px;
 	}
 	/* End Initial */
 
@@ -393,7 +388,7 @@ p{
 		height: 250px;
 	}
 	#about .col-right h2{
-		margin-bottom: 40px;
+		margin-bottom: 20px;
 	}
 	/* End About */
 
