@@ -216,13 +216,10 @@ p{
 }
 #initial .presentation-right .pod-image .image-text{
 	position: absolute; /*places in the lower-left*/
-	bottom: 10px;
-	left: 10px;
-	background: rgba(0, 0, 0, 0.6); /*makes it readable*/
+	bottom: 5px;
+	right: 5px;
 	color:#e6e6e6; /*ensures contrast*/
-	padding: 5px 10px;
-	font-size: 14px;
-	border-radius: 5px;
+	font-size: 7px;
 }
 /* End Initial Section */
 
@@ -616,3 +613,18 @@ p{
 	}
 }
 /*End Media Query for Desktop*/
+
+/*Media Query for 768px or smaller*/
+@media only screen and (max-width:768px){
+	/* Initial Section */
+	#initial .presentation-left .section-title {
+		display: block;
+		font-size: 28px; /* Adjust as needed */
+		line-height: 34px;
+	}
+	#initial .presentation-left .section-title span {
+		display: block; /* Moves "Podcast" to a new line */
+	}
+	/* End Initial Section */
+}
+/*End Media Query for 768px or smaller*/
