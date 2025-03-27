@@ -215,10 +215,11 @@ p{
 	object-fit: contain;
 }
 #initial .presentation-right .pod-image .image-text{
-	position: absolute;
+	position: absolute; /*places in the lower-left*/
 	bottom: 10px;
 	left: 10px;
-	color:#e6e6e6;
+	background: rgba(0, 0, 0, 0.6); /*makes it readable*/
+	color:#e6e6e6; /*ensures contrast*/
 	padding: 5px 10px;
 	font-size: 14px;
 	border-radius: 5px;
