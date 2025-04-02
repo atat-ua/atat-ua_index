@@ -224,61 +224,8 @@ p{
 /* End Initial Section */
 
 /*---------------------------------- Podcast grid ------------------------------------*/
+
 /* Podcast grid Section */
-#podcastgrid .podcast-container {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 20px;
-	justify-content: center;
-	padding: 20px;
-}
-
-#podcastgrid .podcast-container .podcast{
-	background: white;
-	border-radius: 10px;
-	overflow: hidden;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	transition: transform 0.3s ease;
-	max-width: 600px;
-}
-
-#podcastgrid .podcast-container .podcast .img{
-	width: 100%;
-	height: auto;
-	display: block;
-}
-
-#podcastgrid .podcast-container .podcast .podcast-info{
-	padding: 15px;
-}
-
-#podcastgrid .podcast-container .podcast .podcast-info h2{
-	font-size: 1.2rem;
-	color: #0077cc;
-}
-
-#podcastgrid .podcast-container .podcast .podcast-info p{
-	font-size: 0.9rem;
-	color: #555;
-}
-
-#podcastgrid .podcast-container .podcast .podcast-info a{
-	color: #0077cc;
-	text-decoration: none;
-	font-weight: bold;
-}
-
-#podcastgrid .podcast-container .podcast .podcast-info .date {
-	display: block;
-	font-size: 0.8rem;
-	color: #888;
-	margin-top: 10px;
-}
-/* End Podcast grid Section */
-
-/*---------------------------------- Guest ------------------------------------*/
-
-/* Guest Section */
 #guest{
 	min-height: 100vh;
 	display: flex;
@@ -347,7 +294,7 @@ p{
 	line-height: 20px;
 	color: black;
 }
-/* End Guest Section */
+/* End podcast grid Section */
 
 /*--------------------------- Most Listened ------------------------------------*/
 /* Most Listened section */
