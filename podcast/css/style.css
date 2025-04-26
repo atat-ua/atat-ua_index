@@ -282,6 +282,10 @@ p{
 	height: 100%;
 	object-fit: contain;
 }
+#guest .guest-bottom .guest .guest-info{
+	display: flex;
+	flex-direction: column;
+}
 #guest .guest-bottom .guest .guest-info h2{
 	font-size: 20px;
 	line-height: 28px;
@@ -293,6 +297,21 @@ p{
 	font-size: 14px;
 	line-height: 20px;
 	color: black;
+	display: flex;
+}
+#guest .guest-bottom .guest .guest-info a {
+	color: #00bf63;
+	text-decoration: none;
+	font-weight: bold;
+	margin-top: 10px;
+}
+#guest .guest-bottom .guest .guest-info a:hover {
+	text-decoration: underline;
+}
+#guest .guest-bottom .guest .guest-info .date {
+	font-size: 12px;
+	color: black;
+	margin-top: 5px;
 }
 /* End podcast grid Section */
 
