@@ -265,31 +265,31 @@ p{
 	margin-top: 44px;
 	flex-direction: column;
 }
-#guest .guest-bottom .guest-1{
+#guest .guest-bottom .guest{
 	background-color: #e6e6e6;
 	padding: 20px;
 	border-radius: 12px;
 	flex: 1 1 0%; /* it takes 50% width */
 }
-#guest .guest-bottom .guest-1 .guest-image{
+#guest .guest-bottom .guest .guest-image{
 	border-radius: 8px;
 	overflow: hidden;
 	position: relative;
 	width: 100%;
 }
-#guest .guest-bottom .guest-1 .guest-image .img{
+#guest .guest-bottom .guest .guest-image .img{
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
 }
-#guest .guest-bottom .guest-1 .guest-info h2{
+#guest .guest-bottom .guest .guest-info h2{
 	font-size: 20px;
 	line-height: 28px;
 	color: #00bf63;
 	font-weight: 500;
 	margin-top: 12px;
 }
-#guest .guest-bottom .guest-1 .guest-info p{
+#guest .guest-bottom .guest .guest-info p{
 	font-size: 14px;
 	line-height: 20px;
 	color: black;
@@ -549,19 +549,19 @@ p{
 	#guest .guest-bottom{
 	flex-direction: row;
 	}
-	#guest .guest-bottom .guest-1{
+	#guest .guest-bottom .guest{
 	background-color: #e6e6e6;
 	padding-bottom: 135px;
 	border-radius: 12px;
 	flex: 1 1 0%; /* it takes 50% width */
 	}
-	#guest .guest-bottom .guest-1 .guest-image{
+	#guest .guest-bottom .guest .guest-image{
 	height: 100%
 	}
-	#guest .guest-bottom .guest-1 .guest-image .img{
+	#guest .guest-bottom .guest .guest-image .img{
 	position: absolute;
 	}
-	#guest .guest-bottom .guest-1 .guest-info p{
+	#guest .guest-bottom .guest .guest-info p{
 	font-size: 16px;
 	line-height: 24px;
 	margin-top: 8px;
