@@ -509,19 +509,6 @@ p{
 	margin-top: 10px;
 	margin-bottom: 10px;	
 }
-#footer .social-icon{
-	display: flex;
-	margin-top:30px;
-	margin-bottom:15px;
-	float: center;
-	justify-content: center;
-}
-#footer .social-icon .social-item img{
-	object-fit: contain; /* helps not to see the image cut partially*/
-	width: 25px;
-	height: 25px;
-	margin: 0 8px;
-}
 #footer p{
 	font-size: 1.1rem;
 }
