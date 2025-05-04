@@ -148,7 +148,7 @@ p{
 #initial{
 	position: relative;/*Because we will have an overlay of this section*/
 	height: 100vh;
-	background-image: url(../../../images/picture/Podcast/podcast_2.jpg);
+	background-image: url(../../../images/picture/Podcast/podcast_1.jpg);
 	background-size: cover;
 	background-position: center;
 	display: flex;
@@ -168,7 +168,7 @@ p{
 	height: 100%;
 	width: 100%;
 	background-color: #e6e6e6;
-	opacity: .90;
+	opacity: .95;
 	z-index: -1; /*for being able to select things over this layer*/
 }
 #initial .initial-container h1{
@@ -177,81 +177,25 @@ p{
 	color: #00bf63;
 	line-height: 1.2;
 }
-
 /* End Initial Section */
 
-/*---------------------------------- Guest ------------------------------------*/
+/*---------------------------------- Podcast audio ------------------------------------*/
 
-/* Guest Section */
-#guest{
-	min-height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: white;
-	padding-top: 100px;
-	padding-bottom: 100px;
+/* Podcast audio Section */
+.audio-player-section {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 40px auto;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-#guest .guest{ /* container */
-	max-width: 1024px;
-	width: 90%; /* in order to have some margins when I make little the device */
-	margin-left: auto; /* makes our content in the center */
-	margin-right: auto;
-	flex-direction: column;
+.audio-player-section audio {
+  width: 100%;
+  outline: none;
 }
-#guest .guest-top{
-	text-align: center;
-	max-width: 512px;
-	margin-left: auto;
-	margin-right: auto;
-}
-#guest .guest-top h1{
-	font-size: 36px;
-	line-height: 40px;
-	font-weight: 700;
-	color: #00bf63;
-}
-#guest .guest-top p{
-	font-size: 14px;
-	line-height: 20px;
-	color: black;
-}
-#guest .guest-bottom{
-	display: flex;
-	gap: 20px;
-	margin-top: 44px;
-	flex-direction: column;
-}
-#guest .guest-bottom .guest-1{
-	background-color: #e6e6e6;
-	padding: 20px;
-	border-radius: 12px;
-	flex: 1 1 0%; /* it takes 50% width */
-}
-#guest .guest-bottom .guest-1 .guest-image{
-	border-radius: 8px;
-	overflow: hidden;
-	position: relative;
-	width: 100%;
-}
-#guest .guest-bottom .guest-1 .guest-image .img{
-	width: 100%;
-	height: 100%;
-	object-fit: contain;
-}
-#guest .guest-bottom .guest-1 .guest-info h2{
-	font-size: 20px;
-	line-height: 28px;
-	color: #00bf63;
-	font-weight: 500;
-	margin-top: 12px;
-}
-#guest .guest-bottom .guest-1 .guest-info p{
-	font-size: 14px;
-	line-height: 20px;
-	color: black;
-}
-/* End Guest Section */
+/* End Podcast audio Section */
 
 
 /*---------------------------------- Footer ------------------------------------*/
