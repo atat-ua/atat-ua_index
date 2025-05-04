@@ -148,7 +148,7 @@ p{
 #initial{
 	position: relative;/*Because we will have an overlay of this section*/
 	height: 100vh;
-	background-image: url(../../../images/picture/Podcast/podcast_1.jpg);
+	background-image: url(../../../images/picture/Podcast/podcast_2.jpg);
 	background-size: cover;
 	background-position: center;
 	display: flex;
@@ -168,7 +168,7 @@ p{
 	height: 100%;
 	width: 100%;
 	background-color: #e6e6e6;
-	opacity: .95;
+	opacity: .90;
 	z-index: -1; /*for being able to select things over this layer*/
 }
 #initial .initial-container h1{
