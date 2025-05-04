@@ -146,11 +146,23 @@ p{
 /*---------------------------------- Initial ------------------------------------*/
 /* Initial Section */
 #initial{
-	min-height: 110vh;
+	background-image: url('../../images/picture/Podcast/podcast_1');
+	background-size: cover;
+	background-position: top-center;
+	position: relative;	/*Because we will have an overlay of this section*/
+	z-index: 1;
+}
+/*for making the background more difuse*/
+#initial::after{
+	content: '';
+	position: absolute;
+	left:0;
+	top:0;
+	height: 100%;
+	width: 100%;
 	background-color: #e6e6e6;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	opacity: .95;
+	z-index: -1; /*for being able to select things over this layer*/
 }
 #initial .initial{ /* container */
 	max-width: 1024px;
