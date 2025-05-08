@@ -1,0 +1,461 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html{
+	font-size: 10px;
+	font-family: arial;
+}
+.container{
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+/*making sure the images look nice*/
+img{
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+p{
+	color: white;
+	font-size: 1.4rem;
+	margin-top: 5px;
+	line-height: 2.5rem;
+	font: 300px;
+	letter-spacing: .05rem;	
+}
+
+/*---------------------------------- Header ------------------------------------*/
+
+/* Header Section */
+#header{
+	position: fixed;
+	z-index: 1000;
+	left:0;
+	top: 0;
+	width: 100vw;
+	height: auto;
+}
+#header .header{
+	min-height: 15vh;
+	background-color: none;
+	transition: .3s ease background-color;
+}
+#header .nav-bar{
+	display:flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	max-width: 1300px;
+	padding: 0 10px;
+}
+#header .nav-bar .logo img{
+	width: 325px;
+	float: left;
+	padding-left: 5%;
+	padding-top: 2%;
+}
+#header .nav-list ul{
+	list-style: none;
+	position: absolute;
+	background-color: white;
+	width: 100vw;
+	height: 100vh;
+	left: 100%;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	overflow-x: hidden;
+	transition: .3s ease left;
+}
+#header .nav-list ul.active{
+	left: 0;
+}
+#header .nav-list ul a{
+	font-size: 2.5rem;
+	font-weight: 500;
+	letter-spacing: .2rem;
+	text-decoration: none;
+	color: black;
+	text-transform: uppercase;
+	padding: 20px;
+	display: block;
+}
+#header .nav-list ul li:hover a{
+	color: #00BF63;
+}
+#header .hamburger{
+	height: 60px;
+	width: 60px;
+	display: inline-block;
+	border: 3px solid black;
+	border-radius: 50%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	cursor: pointer;
+	transform: scale(.8);
+	margin-right: 20px;
+}
+#header .hamburger .bar{
+	height: 2px;
+	width: 30px;
+	position: relative;
+	background-color: black;
+	z-index: -1;
+}
+#header .hamburger .bar::after,
+#header .hamburger .bar::before{
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	background-color: black;
+	transition: .3s ease;
+	transition-property: top, bottom;
+}
+#header .hamburger .bar::before{
+	bottom: 8px;
+}
+#header .hamburger .bar::after{
+	top: 8px;
+}
+#header .hamburger.active .bar::before{
+	bottom: 0;
+}
+#header .hamburger.active .bar::after{
+	top: 0;
+}
+/* End Header Section */
+
+/*---------------------------------- Initial Section ------------------------------------*/
+/* Initial Section */
+#initial{
+	min-height: 110vh;
+	background-color: #e6e6e6;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#initial .initial{ /* container */
+	max-width: 1024px;
+	width: 90%; /* in order to have some margins when I make little the device */
+	margin-left: auto; /* makes our content in the center */
+	margin-right: auto;
+	display: flex; /* We want flex for our large device */
+	flex-direction: column-reverse;
+	gap: 30px;
+}
+#initial .presentation-left{
+	text-align: center;
+}
+#initial .presentation-left h1{
+	font-size: 36px;
+	line-height: 40px;
+	font-weight: 700;
+	color: #00bf63;
+	text-transform: uppercase;
+}
+#initial .presentation-left p{
+	font-size: 14px;
+	line-height: 20px;
+	color: black;
+}
+#initial .presentation-left a{
+	text-decoration: none;
+	display: inline-block;
+	color: white;
+	background-color: #00bf63;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	padding-left: 12px;
+	padding-right: 12px;
+	margin-top: 20px;
+	font-size: 14px;
+	line-height: 20px;
+	border-radius: 6px;
+}
+#initial .presentation-left a:hover{
+	background-color: rgb(34 197 94);
+	color: white;
+}
+#initial .presentation-right .pod-image{
+	width: 100%;
+	height: 50vh;
+	overflow: hidden;
+	position: relative;
+	margin-top: 20vh;
+}
+#initial .presentation-right .pod-image .img{
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+/* End Initial Section */
+
+/*---------------------------------- Content Section ------------------------------------*/
+/* Content Section */
+#content .content{
+	flex-direction: column; /*we rewrite this because by default at the beginning is horizontal*/
+	text-align: center;
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 100px 0;
+}
+#content .last-content{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 0 auto;
+}
+#content .last-content .service-item{
+	width: 525px;
+	padding: 30px;
+	margin: 10px 5%;
+	text-align:center;
+	display:flex;
+	align-items:flex-start;
+	justify-content: center;
+	flex-direction: row;
+	border-radius: 10px;
+	align-items: center;
+	background-image: url('../images/picture/Home/white.jpg');
+	background-size: cover;
+	position: relative;
+	z-index: 1;
+	overflow: hidden; /*for not having problem with the boarders of the square*/
+	box-shadow: 0px 0px 10px 0;
+	transition: .3s ease box-shadow;
+}
+#content .last-content .service-item:hover{
+	box-shadow: 0px 0px 5px 0;
+}
+#content .last-content .service-item::after{
+	content:'';
+	position: absolute;
+	left:0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	opacity: .9;
+	z-index: -1;
+}
+
+#content .last-content .service-item .post-image{ /* something I am not doing properly because the size of the photo does not change */
+	width: 40%;
+	height: 25%;
+	float: left;
+}
+#content .last-content .post-item .post-preview{
+	width: 60%;
+	padding: 10px;
+	float: right;
+}
+#content .previous-content{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 50px;
+}
+#content .previous-content .post-item{
+	width: 325px;
+	padding: 30px;
+	margin: 10px 5%;
+	text-align:center;
+	display:flex;
+	align-items:flex-start;
+	justify-content: center;
+	flex-direction: column;
+	border-radius: 10px;
+	align-items: center;
+	background-image: url('../images/picture/Home/white.jpg');
+	background-size: cover;
+	position: relative;
+	z-index: 1;
+	overflow: hidden; /*for not having problem with the boarders of the square*/
+	box-shadow: 0px 0px 10px 0;
+	transition: .3s ease box-shadow;
+}
+#content .previous-content .post-item:hover{
+	box-shadow: 0px 0px 5px 0;
+}
+#content .previous-content .post-item::after{
+	content:'';
+	position: absolute;
+	left:0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	opacity: .9;
+	z-index: -1;
+}
+#content .previous-content .post-item h1{
+	font-size: 2.5rem;
+	font-weight: 500;
+	color: white;
+	margin-top: 10 px;
+	margin-bottom: 10 px;
+	text-transform: uppercase;
+	text-align: center;
+}
+#content .previous-content .post-item .read-more{
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+}
+#content .previous-content .post-item .post-preview p{
+	color: white;
+	font-size: 1.4rem;
+	margin-top: 5px;
+	line-height: 2.5rem;
+	font: 300px;
+	letter-spacing: .05rem;
+	text-align: left;
+}
+#content .previous-content .post-item .post-preview .btn{
+	padding:.5rem 1rem;
+	background: transparent;
+	color: white;
+}
+#content .previous-content .post-item .post-preview .btn:hover{
+	color: #00BF63;
+}
+#content .previous-content .post-item .post-preview a{
+	font-size: 1.4rem;
+}
+/* End Content Section */
+
+
+/*---------------------------------- Footer ------------------------------------*/
+/* Footer */
+#footer{
+	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+}
+#footer .footer{
+	min-height: 90px;
+	flex-direction: column;
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+#footer .logo img{
+	width: 225px;
+	float: center;
+	padding-bottom: 1%;
+	padding-top:2%;
+}
+#footer .logo h2{
+	color: white;
+	text-align: center;
+	font-weight: 500;
+	font-size: 1.8rem;
+	letter-spacing: .1rem;
+	margin-top: 10px;
+	margin-bottom: 10px;	
+}
+#footer .social-icon{
+	display: flex;
+	margin-top:30px;
+	margin-bottom:15px;
+	float: center;
+	justify-content: center;
+}
+#footer .social-icon .social-item img{
+	object-fit: contain; /* helps not to see the image cut partially*/
+	width: 25px;
+	height:25px;
+	margin: 0 8px;
+}
+#footer p{
+	font-size: 1.1rem;
+}
+/* End Footer */
+
+/*------------------------------ Media Query -----------------------------------*/
+/* it is what is called responsiveness */
+/*Media Query for Tablet*/
+@media only screen and (min-width:768px){/*that is for the tablet*/
+	/* Initial */
+	#initial .initial{
+	flex-direction: row;
+	}
+	#initial .presentation-left{
+	text-align: left;
+	}
+	#initial .presentation-left h1{
+	font-size: 60px;
+	line-height: 64px;
+	}
+	#initial .presentation-left p{
+	font-size: 18px;
+	line-height: 28px;
+	}
+	#initial .presentation-left a{
+	font-size: 18px;
+	line-height: 28px;
+	}
+	#initial .presentation-right .pod-image{
+	height: 100%;
+	margin-bottom: 105px;
+	}
+	#initial .presentation-right .pod-image .img{
+	position: absolute;
+	top: -25%;
+	}
+	/* End Initial */
+	
+	/* Content */
+	#content h1{
+		font-size: 7rem;
+	}
+	#content .last-content .service-item{
+		flex-basis: 200%;
+		margin: 1.5%;
+	}
+	#content .previous-content .post-item{
+		flex-basis: 45%;
+		margin: 2.5%;
+	}
+	/* End Content */
+}
+/*End Media Query for Tablet*/
+
+/*Media Query for Desktop*/
+@media only screen and (min-width:1200px){/*that is for the desktop*/
+	/* Header */
+	#header .hamburger{
+		display: none;
+	}
+	#header .nav-list ul{
+		position: initial;
+		display: block;
+		height: auto;
+		width: fit-content;
+		background-color: transparent;
+	}
+	#header .nav-list ul li{
+		display: inline-block;
+	}
+	#header .nav-list ul li a{
+		font-size: 1.8rem;
+	}
+	#header .nav-list ul a:after{
+		display: none;
+	}	
+	/* End Header */
+}
+/*End Media Query for Desktop*/
