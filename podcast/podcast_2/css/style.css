@@ -186,12 +186,14 @@ p{
   background-color: #e6e6e6;
   padding: 20px;
   border-radius: 12px;
-  max-width: 505px;
-  margin: 40px auto;
+  max-width: 400px;
+	width: 90%; /*makes it responsive*/
+  margin: 70px auto;
   text-align: center;
+	box-sizing: border-box; /*keeps padding inside the width limits (prevents overflow)*/
 }
 .audio-player-section audio {
-  width: 100%;
+	width: 100%;
   outline: none;
 }
 /* End Podcast audio Section */
