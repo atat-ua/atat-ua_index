@@ -234,16 +234,19 @@ img{
 
 /*---------------------------------- Comment Section ------------------------------------*/
 #comment-section {
-  background-color: #e6e6e6;
+  background-color: transparent;
   padding: 4rem 1.2rem;
-	margin-top: 4rem;
+	margin-top: 2rem;
+	display: flex;
+  justify-content: center; /* centers the inner container */
 }
 
 .comment-container {
+	background-color: #e6e6e6;
   max-width: 768px;
   width: 100%;
-  padding: 0 1.5rem;
-  margin: 0 auto;  
+  padding: 2rem 2rem;
+  border-radius: 12px;
 }
 
 .comment-container h2 {
@@ -293,12 +296,29 @@ img{
 }
 /* End Comment Section */
 
+/*---------------------------------- Subscribe Section ------------------------------------*/
+#subscribe-section {
+  background-color: #00bf63;
+  padding: 4rem 1.2rem;
+	margin-top: 2rem;
+	display: flex;
+  justify-content: center; /* centers the inner container */
+}
+
+.subscribe-container {
+  max-width: 768px;
+  width: 100%;
+  padding: 2rem 2rem;
+  border-radius: 12px;
+}
+/* End Subscribe Section */
+
 /*---------------------------------- Footer ------------------------------------*/
 
 /* Footer */
 #footer{
 	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-	margin-top: 4rem;
+	/*margin-top: 4rem;*/
 }
 #footer .footer{
 	min-height: 90px;
@@ -321,21 +341,9 @@ img{
 	margin-top: 10px;
 	margin-bottom: 10px;	
 }
-#footer .social-icon{
-	display: flex;
-	margin-top:30px;
-	margin-bottom:15px;
-	float: center;
-	justify-content: center;
-}
-#footer .social-icon .social-item img{
-	object-fit: contain; /* helps not to see the image cut partially*/
-	width: 25px;
-	height: 25px;
-	margin: 0 8px;
-}
 #footer p{
 	font-size: 1.1rem;
+	color: white;
 }
 /* End Footer */
 
