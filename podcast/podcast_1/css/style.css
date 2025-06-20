@@ -244,63 +244,42 @@ p{
 
 /*------------------------------ Media Query -----------------------------------*/
 
+/*Mobile Phones*/
+@media only screen and (max-width: 480px){
+	html {
+		font-size: 8px;
+	}
+	/* Header */
+	#header .hamburger{
+		height: 40px;
+		width: 40px;
+	}
+	#header .nav-bar .logo img{
+		width: 200px;
+	}
+	#header .hamburger .bar{
+		height: 2px;
+		width: 20px;
+	/* End Header */
+
+	/* Footer */
+	#footer .logo img{
+		width: 150px;
+	}
+	#footer .logo h2{
+		font-size: 1.2rem;
+	}
+	#footer p{
+		font-size: 0.9rem;
+	}
+	/* End Footer */
+}
+/*End Media Query for Mobile Phones*/	
+
 /*Media Query for Tablet*/
 @media only screen and (min-width:768px){/*that is for the tablet*/
 	/* Initial */
-	#initial .initial{
-	flex-direction: row;
-	}
-	#initial .presentation-left{
-	text-align: left;
-	}
-	#initial .presentation-left h1{
-	font-size: 60px;
-	line-height: 64px;
-	}
-	#initial .presentation-left p{
-	font-size: 18px;
-	line-height: 28px;
-	}
-	#initial .presentation-left a{
-	font-size: 18px;
-	line-height: 28px;
-	}
-	#initial .presentation-right .pod-image{
-	height: 100%;
-	margin-bottom: 105px;
-	}
-	#initial .presentation-right .pod-image .img{
-	position: absolute;
-	top: -25%;
-	}
 	/* End Initial */
-	
-	/* Guest */
-	#guest .guest-top p{
-	font-size: 16px;
-	line-height: 24px;
-	}
-	#guest .guest-bottom{
-	flex-direction: row;
-	}
-	#guest .guest-bottom .guest-1{
-	background-color: #e6e6e6;
-	padding-bottom: 135px;
-	border-radius: 12px;
-	flex: 1 1 0%; /* it takes 50% width */
-	}
-	#guest .guest-bottom .guest-1 .guest-image{
-	height: 100%
-	}
-	#guest .guest-bottom .guest-1 .guest-image .img{
-	position: absolute;
-	}
-	#guest .guest-bottom .guest-1 .guest-info p{
-	font-size: 16px;
-	line-height: 24px;
-	margin-top: 8px;
-	}
-	/* End Guest */
 }
 /*End Media Query for Tablet*/
 
@@ -327,9 +306,5 @@ p{
 		display: none;
 	}	
 	/* End Header */
-	#initial .initial-top{
-		flex-basis: 22%;
-		margin: 1.5%;
-	}
 }
 /*End Media Query for Desktop*/
