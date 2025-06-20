@@ -223,9 +223,8 @@ p{
 }
 /* End Initial Section */
 
-/*---------------------------------- Podcast grid ------------------------------------*/
-
-/* Podcast grid Section */
+/*---------------------------------- Articles grid ------------------------------------*/
+/* Artcles grid Section */
 #guest{
 	min-height: 100vh;
 	display: flex;
@@ -235,42 +234,42 @@ p{
 	padding-top: 100px;
 	padding-bottom: 100px;
 }
-#guest .guest{ /* container */
+#guest .guest-container{ /* container */
 	max-width: 1024px;
 	width: 90%; /* in order to have some margins when I make little the device */
 	margin-left: auto; /* makes our content in the center */
 	margin-right: auto;
 	flex-direction: column;
 }
-#guest .guest-top{
+#guest .guest-container .guest-top{
 	text-align: center;
 	max-width: 512px;
 	margin-left: auto;
 	margin-right: auto;
 }
-#guest .guest-top h1{
+#guest .guest-container .guest-top h1{
 	font-size: 36px;
 	line-height: 40px;
 	font-weight: 700;
 	color: #00bf63;
 }
-#guest .guest-top p{
+#guest .guest-container .guest-top p{
 	font-size: 14px;
 	line-height: 20px;
 	color: black;
 }
-#guest .guest-bottom{
-	display: flex;
+#guest .guest-container .guest-bottom{
+	display: grid;
+	grid-template-columns: 1fr;/* one column on mobile */
 	gap: 20px;
 	margin-top: 44px;
-	flex-direction: column;
 }
-#guest .guest-bottom .guest{
+/*#guest .guest-bottom .guest{
 	background-color: #e6e6e6;
 	padding: 20px;
 	border-radius: 12px;
 	flex: 1 1 0%; /* it takes 50% width */
-}
+/*}
 #guest .guest-bottom .guest .guest-image{
 	border-radius: 8px;
 	overflow: hidden;
@@ -313,55 +312,69 @@ p{
 	color: black;
 	margin-top: 5px;
 }
-/* End podcast grid Section */
+/* End articles grid Section */
 
-/*---------------------------------- Cta ------------------------------------*/
-/* cta section */
-#cta{
+/*---------------------------------- Subscribe Section ------------------------------------*/
+#subscribe-section {
+	height: 25vh;
+  background-color: #00bf63;
+  padding: 4rem 1.2rem;
+	margin-top: 2rem;
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: #e6e6e6;
-	padding-top: 100px;
-	padding-bottom: 100px;
-	background-size: cover;
-	background-position: center;
+  justify-content: center; /* centers the inner container */
 }
-#cta .cta{
-	max-width: 800px;
-	width: 90%; /* in order to have some margins when I make little the device */
-	margin-left: auto; /* makes our content in the center */
-	margin-right: auto;
-	flex-direction: column;
+#subscribe-section .subscribe-container {
+  max-width: 768px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
 }
-#cta .cta h1{
-	font-size: 36px;
-	line-height: 1.25;
-	font-weight: 700;
-	color: black;
-	text-transform: uppercase;
+#subscribe-section .subscribe-container h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: black;
 }
-#cta .cta a{
-	text-decoration: none;
-	display: inline-block;
-	color: white;
-	background-color: #00bf63;
-	padding-top: 4px;
-	padding-bottom: 4px;
-	padding-left: 16px;
-	padding-right: 16px;
-	margin-top: 5px;
-	font-size: 15px;
-	font-weight: 500;
-	line-height: 23px;
-	border-radius: 6px;
-	text-transform: capitalize;
+
+/* Form styles */
+#subscribe-section .subscribe-container .subscribe-form {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  max-width: 100%;
 }
-#cta .cta a:hover{
-	background-color: rgb(34 197 94);
-	color: white;
+
+#subscribe-section .subscribe-container .subscribe-form input[type="email"] {
+  padding: 1rem;
+  font-size: 1.3rem;
+  width: 300px;
+  max-width: 100%;
+  border: 1px solid #e6e6e6;
+	border-right: none; /* Remove right border */
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  font-family: Arial, Helvetica, sans-serif;
 }
-/* End cta section */
+
+#subscribe-section .subscribe-container .subscribe-form button {
+  padding: 1rem 2rem;
+  font-size: 1.3rem;
+	font-weight: bold;
+  background-color: #e6e6e6;
+  color: black;
+  border: 1px solid #e6e6e6;
+  border-left: 1px solid #e6e6e6; /* thin dividing line */
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#subscribe-section .subscribe-container .subscribe-form button:hover {
+  background-color: white;
+	color: #00BF63;
+}
+/* End Subscribe Section */
 
 /*---------------------------------- Footer ------------------------------------*/
 
@@ -467,14 +480,14 @@ p{
 		line-height: 24px;
 		}
 		#guest .guest-bottom{
-		flex-direction: row;
+		grid-template-columns: repeat(2, 1fr); /* two columns */
 		}
-		#guest .guest-bottom .guest{
+		/*#guest .guest-bottom .guest{
 		background-color: #e6e6e6;
 		padding-bottom: 135px;
 		border-radius: 12px;
 		flex: 1 1 0%; /* it takes 50% width */
-		}
+		/*}
 		#guest .guest-bottom .guest .guest-image{
 		height: 100%
 		}
@@ -485,7 +498,7 @@ p{
 		font-size: 16px;
 		line-height: 24px;
 		margin-top: 8px;
-		}
+		}*/
 		/* End Guest */
 }
 /*End Media Query for Tablet*/
@@ -513,6 +526,12 @@ p{
 		display: none;
 	}	
 	/* End Header */
+
+	/* Guest */
+	#guest .guest-bottom{
+		grid-template-columns: repeat(2, 1fr); /* two columns */
+		}
+	/* End Guest */
 
 	/* Initial */
 	#initial .initial-top{
