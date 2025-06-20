@@ -22,14 +22,14 @@ img{
 	display: block;
 	vertical-align: middle;
 }
-p{
+/*p{
 	color: white;
 	font-size: 1.4rem;
 	margin-top: 5px;
 	line-height: 2.5rem;
 	font: 300px;
 	letter-spacing: .05rem;	
-}
+}*/
 
 
 
@@ -46,7 +46,7 @@ p{
 }
 #header .header{
 	min-height: 15vh;
-	background-color: none;
+	*background-color: none;
 	transition: .3s ease background-color;
 }
 #header .nav-bar{
@@ -143,8 +143,49 @@ p{
 }
 /* End Header Section */
 
+/*---------------------------------- Hero Section ------------------------------------*/
+/* Hero Section */
+#hero{
+	position: relative;/*Because we will have an overlay of this section*/
+	height: 50vh;
+	background-image: url(../../../images/picture/Podcast/podcast_1.jpg);
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	padding: 2rem;
+	text-align: left;
+	z-index: 1;
+	margin-bottom: 2.5rem;
+}
+/*for making the background more difuse*/
+#hero::after{
+	content: '';
+	position: absolute;
+	left:0;
+	top:0;
+	left:0;
+	height: 100%;
+	width: 100%;
+	background-color: #e6e6e6;
+	opacity: .95;
+	z-index: -1; /*for being able to select things over this layer*/
+}
+#hero .hero-container h1{
+	font-size: 5rem;
+	font-weight: 700;
+	color: #00bf63;
+	line-height: 1.2;
+	margin-top: 20rem; /* Push down the title responsively */
+  margin-bottom: 0;
+  text-align: left;
+}
+/* End Hero Section */
+
 /*---------------------------------- Initial ------------------------------------*/
 /* Initial Section */
+
 #initial{
 	min-height: 110vh;
 	background-color: white;
@@ -161,28 +202,15 @@ p{
 	flex-direction: column-reverse;
 	gap: 30px;
 }
-#initial .hero-image{
-	width: 100%;
-  height: auto;
-  border-radius: 12px;
-	margin-top: 15rem;
-  margin-bottom: 2rem;
-}
-#initial .initial-container h1{
-	font-size: 36px;
-	line-height: 40px;
-	font-weight: 700;
-	color: #00bf63;
-	text-transform: uppercase;
-}
-#initial .initial-container .meta{
-	color: #888;
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
+#initial .initial-container {
+  max-width: 768px;         /* Limits how wide it can grow */
+  width: 100%;              /* Responsive base */
+  padding: 0 1.5rem;        /* Adds space on left and right */
+  margin: 0 auto;           /* Centers the content */
 }
 #initial .initial-container p{
-	margin-bottom: 1.5rem;
-  font-size: 1.1rem;
+	margin-bottom: 1.2rem;
+  font-size: 1.8rem;
 }
 #initial .initial-container .inline-image {
   width: 100%;
@@ -190,6 +218,7 @@ p{
   margin: 2rem 0;
 }
 #initial .initial-container blockquote{
+	font-size: 1.5rem;
   font-style: italic;
   color: #666;
   border-left: 4px solid #ccc;
@@ -275,47 +304,6 @@ p{
 	top: -25%;
 	}
 	/* End Initial */
-	
-	/* Guest */
-	#guest .guest-top p{
-	font-size: 16px;
-	line-height: 24px;
-	}
-	#guest .guest-bottom{
-	flex-direction: row;
-	}
-	#guest .guest-bottom .guest-1{
-	background-color: #e6e6e6;
-	padding-bottom: 135px;
-	border-radius: 12px;
-	flex: 1 1 0%; /* it takes 50% width */
-	}
-	#guest .guest-bottom .guest-1 .guest-image{
-	height: 100%
-	}
-	#guest .guest-bottom .guest-1 .guest-image .img{
-	position: absolute;
-	}
-	#guest .guest-bottom .guest-1 .guest-info p{
-	font-size: 16px;
-	line-height: 24px;
-	margin-top: 8px;
-	}
-	/* End Guest */
-
-	/* Stats */
-	#stats .stats-info{
-	flex-direction: row;
-	gap: 100px;
-	}
-	/* End Stats */
-	
-	/* Cta */
-	#cta .cta h1{
-	font-size: 72px;
-	line-height: 78px;
-	}
-	/* End Cta */
 }
 /*End Media Query for Tablet*/
 
@@ -342,9 +330,22 @@ p{
 		display: none;
 	}	
 	/* End Header */
+	/*In big screen, the position of the title starts at same position than the text*/
+	#hero .hero-container { 
+		max-width: 768px;
+		width: 100%;
+		padding: 0 1.5rem; 
+  	margin: 0 auto;  
+	}
+	/* Hero */
+
+	/* End Hero */
+
+	/*Initial*/
 	#initial .initial-top{
 		flex-basis: 22%;
 		margin: 1.5%;
 	}
+	/*End Initial*/
 }
 /*End Media Query for Desktop*/
