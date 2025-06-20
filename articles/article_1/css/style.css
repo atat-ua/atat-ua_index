@@ -236,7 +236,7 @@ img{
 #comment-section {
   background-color: transparent;
   padding: 4rem 1.2rem;
-	margin-top: 2rem;
+	/*margin-top: 2rem;*/
 	display: flex;
   justify-content: center; /* centers the inner container */
 }
@@ -298,18 +298,63 @@ img{
 
 /*---------------------------------- Subscribe Section ------------------------------------*/
 #subscribe-section {
+	height: 30vh;
   background-color: #00bf63;
   padding: 4rem 1.2rem;
 	margin-top: 2rem;
 	display: flex;
   justify-content: center; /* centers the inner container */
 }
-
 .subscribe-container {
   max-width: 768px;
   width: 100%;
-  padding: 2rem 2rem;
-  border-radius: 12px;
+  margin: 0 auto;
+  text-align: center;
+}
+.subscribe-container h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: black;
+}
+
+/* Form styles */
+.subscribe-form {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.subscribe-form input[type="email"] {
+  padding: 1rem;
+  font-size: 1.3rem;
+  width: 300px;
+  max-width: 100%;
+  border: 1px solid #e6e6e6;
+	border-right: none; /* Remove right border */
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.subscribe-form button {
+  padding: 1rem 2rem;
+  font-size: 1.3rem;
+	font-weight: bold;
+  background-color: #e6e6e6;
+  color: black;
+  border: 1px solid #e6e6e6;
+  border-left: 1px solid #e6e6e6; /* thin dividing line */
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.subscribe-form button:hover {
+  background-color: white;
+	color: #00BF63;
 }
 /* End Subscribe Section */
 
