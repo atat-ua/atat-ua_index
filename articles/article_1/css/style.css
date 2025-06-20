@@ -241,7 +241,7 @@ img{
   justify-content: center; /* centers the inner container */
 }
 
-.comment-container {
+#comment-section .comment-container {
 	background-color: #e6e6e6;
   max-width: 768px;
   width: 100%;
@@ -249,25 +249,24 @@ img{
   border-radius: 12px;
 }
 
-.comment-container h2 {
+#comment-section .comment-container h2 {
   font-size: 2.5rem;
   color: black;
   margin-bottom: 2rem;
 }
 
-.comment-form {
+#comment-section .comment-form {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.comment-form label {
+#comment-section .comment-form label {
   font-size: 1.55rem;
   color: black;
 }
 
-.comment-form textarea,
-.comment-form input {
+#comment-section .comment-form textarea, .comment-form input {
   width: 100%;
   padding: 1rem;
   border: 1px solid #ccc;
@@ -275,10 +274,10 @@ img{
   font-size: 1.55rem;
   font-family: inherit;
 }
-.comment-form p{
+#comment-section .comment-form p{
 	font-size: 1.3rem;
 }
-.comment-form button {
+#comment-section .comment-form button {
   width: 150px;
   padding: 1rem;
   background-color: #00bf63;
@@ -291,34 +290,34 @@ img{
   transition: background-color 0.3s ease;
 }
 
-.comment-form button:hover {
+#comment-section .comment-form button:hover {
   background-color: #009e52;
 }
 /* End Comment Section */
 
 /*---------------------------------- Subscribe Section ------------------------------------*/
 #subscribe-section {
-	height: 30vh;
+	height: 25vh;
   background-color: #00bf63;
   padding: 4rem 1.2rem;
 	margin-top: 2rem;
 	display: flex;
   justify-content: center; /* centers the inner container */
 }
-.subscribe-container {
+#subscribe-section .subscribe-container {
   max-width: 768px;
   width: 100%;
   margin: 0 auto;
   text-align: center;
 }
-.subscribe-container h2 {
+#subscribe-section .subscribe-container h2 {
   font-size: 3rem;
   margin-bottom: 2rem;
   color: black;
 }
 
 /* Form styles */
-.subscribe-form {
+#subscribe-section .subscribe-container .subscribe-form {
   display: flex;
   justify-content: center;
   align-items: stretch;
@@ -326,7 +325,7 @@ img{
   max-width: 100%;
 }
 
-.subscribe-form input[type="email"] {
+#subscribe-section .subscribe-container .subscribe-form input[type="email"] {
   padding: 1rem;
   font-size: 1.3rem;
   width: 300px;
@@ -338,7 +337,7 @@ img{
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.subscribe-form button {
+#subscribe-section .subscribe-container .subscribe-form button {
   padding: 1rem 2rem;
   font-size: 1.3rem;
 	font-weight: bold;
@@ -352,7 +351,7 @@ img{
   transition: background-color 0.3s ease;
 }
 
-.subscribe-form button:hover {
+#subscribe-section .subscribe-container .subscribe-form button:hover {
   background-color: white;
 	color: #00BF63;
 }
