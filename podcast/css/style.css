@@ -235,80 +235,82 @@ p{
 	padding-top: 100px;
 	padding-bottom: 100px;
 }
-#guest .guest{ /* container */
+#guest .guest-container{
 	max-width: 1024px;
 	width: 90%; /* in order to have some margins when I make little the device */
 	margin-left: auto; /* makes our content in the center */
 	margin-right: auto;
+	display: flex;
 	flex-direction: column;
 }
-#guest .guest-top{
+#guest .guest-container .guest-top{
 	text-align: center;
 	max-width: 512px;
 	margin-left: auto;
 	margin-right: auto;
 }
-#guest .guest-top h1{
+#guest .guest-container .guest-top h1{
 	font-size: 36px;
 	line-height: 40px;
 	font-weight: 700;
 	color: #00bf63;
 }
-#guest .guest-top p{
+#guest .guest-container .guest-top p{
 	font-size: 14px;
 	line-height: 20px;
 	color: black;
 }
-#guest .guest-bottom{
-	display: flex;
+#guest .guest-container .guest-bottom{
+	display: grid;
+	grid-template-columns: 1fr;
 	gap: 20px;
 	margin-top: 44px;
-	flex-direction: column;
 }
-#guest .guest-bottom .guest{
+#guest .guest-container .guest-bottom .guest-item{
 	background-color: #e6e6e6;
 	padding: 20px;
 	border-radius: 12px;
 	flex: 1 1 0%; /* it takes 50% width */
 }
-#guest .guest-bottom .guest .guest-image{
+#guest .guest-container .guest-bottom .guest-item .guest-image img{
 	border-radius: 8px;
 	overflow: hidden;
 	position: relative;
 	width: 100%;
 }
-#guest .guest-bottom .guest .guest-image .img{
+#guest .guest-container .guest-bottom .guest-item .guest-image .img{
 	width: 100%;
-	height: 100%;
+	height: 200px;
 	object-fit: contain;
 }
-#guest .guest-bottom .guest .guest-info{
+#guest .guest-container .guest-bottom .guest-item .guest-info{
 	display: flex;
 	flex-direction: column;
 }
-#guest .guest-bottom .guest .guest-info h2{
+#guest .guest-container .guest-bottom .guest-item .guest-info h2{
 	font-size: 20px;
 	line-height: 28px;
 	color: #00bf63;
 	font-weight: 500;
 	margin-top: 12px;
 }
-#guest .guest-bottom .guest .guest-info p{
+#guest .guest-container .guest-bottom .guest-item .guest-info p{
 	font-size: 14px;
 	line-height: 20px;
 	color: black;
 	display: flex;
 }
-#guest .guest-bottom .guest .guest-info a {
+#guest .guest-container .guest-bottom .guest-item .guest-info a {
 	color: #00bf63;
 	text-decoration: none;
+	font-size: 13px;
 	font-weight: bold;
 	margin-top: 10px;
 }
-#guest .guest-bottom .guest .guest-info a:hover {
+#guest .guest-container .guest-bottom .guest-item .guest-info a:hover {
 	text-decoration: underline;
 }
-#guest .guest-bottom .guest .guest-info .date {
+#guest .guest-container .guest-bottom .guest-item .guest-info .date {
 	font-size: 12px;
 	color: black;
 	margin-top: 5px;
@@ -462,36 +464,21 @@ p{
 		/* End Initial */
 		
 		/* Guest */
-		#guest .guest-top p{
+		#guest .guest-container .guest-top p{
 		font-size: 16px;
 		line-height: 24px;
 		}
-		#guest .guest-bottom{
-		flex-direction: row;
-		}
-		#guest .guest-bottom .guest{
-		background-color: #e6e6e6;
-		padding-bottom: 135px;
-		border-radius: 12px;
-		flex: 1 1 0%; /* it takes 50% width */
-		}
-		#guest .guest-bottom .guest .guest-image{
-		height: 100%
-		}
-		#guest .guest-bottom .guest .guest-image .img{
-		position: absolute;
-		}
-		#guest .guest-bottom .guest .guest-info p{
-		font-size: 16px;
-		line-height: 24px;
-		margin-top: 8px;
+		#guest .guest-container .guest-bottom{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 2rem;
 		}
 		/* End Guest */
 }
 /*End Media Query for Tablet*/
 
 /*Media Query for Desktop*/
-@media only screen and (min-width:1200px){/*that is for the desktop*/
+@media only screen and (min-width:1200px){ /*that is for the desktop*/
 	/* Header */
 	#header .hamburger{
 		display: none;
@@ -519,6 +506,18 @@ p{
 		flex-basis: 22%;
 		margin: 1.5%;
 	}
-	/* End Initial */ 
+	/* End Initial */
+
+	/* Guest */
+	#guest .guest-container .guest-top p{
+		font-size: 16px;
+		line-height: 24px;
+		}
+	#guest .guest-container .guest-bottom{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 2rem;
+	}
+	/*End Guest*/
 }
 /*End Media Query for Desktop*/
