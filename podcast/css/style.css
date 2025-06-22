@@ -31,8 +31,6 @@ p{
 	letter-spacing: .05rem;	
 }
 
-
-
 /*---------------------------------- Header ------------------------------------*/
 
 /* Header Section */
@@ -263,7 +261,7 @@ p{
 #guest .guest-container .guest-bottom{
 	display: grid;
 	grid-template-columns: 1fr;
-	gap: 20px;
+	gap: 2rem;
 	margin-top: 44px;
 }
 #guest .guest-container .guest-bottom .guest-item{
@@ -277,10 +275,10 @@ p{
 	overflow: hidden;
 	position: relative;
 	width: 100%;
+	height: 250px;
 }
 #guest .guest-container .guest-bottom .guest-item .guest-image .img{
 	width: 100%;
-	height: 200px;
 	object-fit: contain;
 }
 #guest .guest-container .guest-bottom .guest-item .guest-info{
@@ -416,6 +414,7 @@ p{
 	#header .hamburger .bar{
 		height: 2px;
 		width: 20px;
+	}
 	/* End Header */
 
 	/* Footer */
@@ -433,47 +432,45 @@ p{
 /*End Media Query for Mobile Phones*/	
 
 /*Media Query for Tablet*/
-@media only screen and (min-width:768px){/*that is for the tablet*/
+@media only screen and (min-width:768px) {/*that is for the tablet*/
 	/* Initial */
 	#initial .initial{
 		flex-direction: row;
-		}
-		#initial .presentation-left{
+	}
+	#initial .presentation-left{
 		text-align: left;
-		}
-		#initial .presentation-left h1{
+	}
+	#initial .presentation-left h1{
 		font-size: 60px;
 		line-height: 64px;
-		}
-		#initial .presentation-left p{
+	}
+	#initial .presentation-left p{
 		font-size: 18px;
 		line-height: 28px;
-		}
-		#initial .presentation-left a{
+	}
+	#initial .presentation-left a{
 		font-size: 18px;
 		line-height: 28px;
-		}
-		#initial .presentation-right .pod-image{
+	}
+	#initial .presentation-right .pod-image{
 		height: 100%;
 		margin-bottom: 105px;
-		}
-		#initial .presentation-right .pod-image .img{
+	}
+	#initial .presentation-right .pod-image .img{
 		position: absolute;
 		top: -25%;
-		}
-		/* End Initial */
+	}
+	/* End Initial */
 		
-		/* Guest */
-		#guest .guest-container .guest-top p{
-		font-size: 16px;
-		line-height: 24px;
-		}
-		#guest .guest-container .guest-bottom{
-		display: grid;
+	/* Guest */
+	/*#guest .guest-container .guest-top p{
+	font-size: 16px;
+	line-height: 24px;
+	}*/
+	#guest .guest-container .guest-bottom {
 		grid-template-columns: repeat(2, 1fr);
-		gap: 2rem;
-		}
-		/* End Guest */
+	}
+	/* End Guest */
 }
 /*End Media Query for Tablet*/
 
@@ -509,14 +506,12 @@ p{
 	/* End Initial */
 
 	/* Guest */
-	#guest .guest-container .guest-top p{
+	/*#guest .guest-container .guest-top p{
 		font-size: 16px;
 		line-height: 24px;
-		}
+		}*/
 	#guest .guest-container .guest-bottom{
-		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		gap: 2rem;
 	}
 	/*End Guest*/
 }
