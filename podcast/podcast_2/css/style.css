@@ -389,19 +389,9 @@ p{
 	/* End Header */
 
 	/* Subscribe section */
-	#subscribe-section .subscribe-container .subscribe-form {
-    flex-direction: column;
-  }
-  #subscribe-section .subscribe-container .subscribe-form input[type="email"], .subscribe-form button {
-    width: 100%;
-    border-radius: 8px; /* Reset full border radius */
-    border: 1px solid #e6e6e6;
-  }
-  #subscribe-section .subscribe-container .subscribe-form button {
-    margin-top: 0.5rem;
-    border-left: 1px solid #e6e6e6;
-  }
-}
+	#subscribe-section .subscribe-container .subscribe-form input[type="email"] {
+		width: 200px;
+	}
 	/* End Subscribe section */
 
 	/* Footer */
