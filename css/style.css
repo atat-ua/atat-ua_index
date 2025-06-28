@@ -282,8 +282,9 @@ p{
 	text-align: left;
 }
 #about .col-left{
-	width: 250px;
+	width: 210px;
 	height: 360px;
+	margin-top: 4rem;
 }
 #about .col-right{
 	width: 100%;
@@ -442,7 +443,7 @@ p{
 
 	/* About */
 	#about .col-left{
-		width: 150px;
+		width: 210px;
 		height: 250px;
 	}
 	#about .col-right h2{
@@ -495,6 +496,10 @@ p{
 		height: 400px;
 		padding-left: 60px;
 	}
+	#about .col-left .about-img {
+		width: 200px;
+		height: 350px;
+	}
 	#about .col-left .about-img::after {
 		left: -45px;
 		top: 34px;
@@ -504,7 +509,7 @@ p{
 	}
 	#about .col-right{
 		text-align: left;
-		padding:30px;
+		padding:25px;
 	}
 	#about .col-right .section-title{
 		text-align: left;
@@ -536,10 +541,13 @@ p{
 		display: none;
 	}	
 	/* End Header */
+
+	/* Initial */
 	#initial .initial-top{
 		flex-basis: 22%;
 		margin: 1.5%;
 	}
+	/* End Initial */
 }
 
 /*End Media Query for Desktop*/
