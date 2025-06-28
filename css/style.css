@@ -266,7 +266,7 @@ p{
 /* About Section */
 #about .about{
 	flex-direction: column-reverse;
-	text-align: center;
+	text-align: left;
 	max-width: 1300px;
 	margin: 0 auto;
 	padding-left: 8%;
@@ -279,7 +279,7 @@ p{
 	color: black;
 	margin-bottom: 10px;
 	letter-spacing: .2rem;
-	text-align: center;
+	text-align: left;
 }
 #about .col-left{
 	width: 250px;
