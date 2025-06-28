@@ -389,6 +389,12 @@ p{
 	}
 	/* End About */
 
+	/* Subscribe section */
+	#subscribe-section .subscribe-container .subscribe-form input[type="email"] {
+		width: 200px;
+	}
+	/* End Subscribe section */
+
 	/* Footer */
 	#footer .logo img{
 		width: 150px;
