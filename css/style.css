@@ -436,9 +436,10 @@ p{
 	#initial .initial-bottom .service-item{
 		width: 70%;
 		padding: 15px;
+		margin-bottom: 20px;
 	}
 	#initial initial-bottom .service-item:first-child{
-		margin-bottom: 20px;
+		/*margin-bottom: 20px;*/
 	}
 	/* End Initial */
 
