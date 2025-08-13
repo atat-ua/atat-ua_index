@@ -110,7 +110,7 @@
 	<!-- End About section -->
 
 	<!-- Subscribe Section -->
-	<section id="subscribe-section">
+	<!-- <section id="subscribe-section">
 		<div class="subscribe-container">
 			<h2>Don't miss next posts</h2>
 			<form class="subscribe-form">
@@ -118,8 +118,24 @@
 				<button type="submit">Subscribe</button>
 			</form>
 		</div>
-	</section>
-	<!-- End Subscribe Section -->
+	</section> -->
+	<!-- End Subscribe Section --> 
+	<form id="contactForm">
+		<input type="email" name="email" placeholder="Your email" required>
+		<button type="submit">Subscribe</button>
+	</form>
+	
+	<script>
+	document.getElementById("contactForm").addEventListener("submit", function(e){
+		e.preventDefault();
+		fetch("https://script.google.com/macros/s/AKfycbyhE3fsPz6RFvlwuorsG6KcoyZ3q8gtTkZ6yQQDpMfKcxdh32AWETQ_5qS-jJNws7oezg/exec", {
+			method: "POST",
+			body: JSON.stringify({
+				email: e.target.email.value
+			})
+		}).then(r => alert("Thanks for subscribing!"));
+	});
+	</script>
 	
 	<!-- Footer -->
 	<section id="footer">
