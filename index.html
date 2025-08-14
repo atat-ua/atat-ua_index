@@ -142,7 +142,7 @@
 		fetch("https://script.google.com/macros/s/AKfycbyhE3fsPz6RFvlwuorsG6KcoyZ3q8gtTkZ6yQQDpMfKcxdh32AWETQ_5qS-jJNws7oezg/exec", {
 			method: "POST",
 			body: JSON.stringify({
-				email: e.target.email.value
+				email: emailValue
 			})
 		})
 		.catch(err => {
