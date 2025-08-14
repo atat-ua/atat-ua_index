@@ -110,17 +110,6 @@
 	<!-- End About section -->
 
 	<!-- Subscribe Section -->
-	<!-- <section id="subscribe-section">
-		<div class="subscribe-container">
-			<h2>Don't miss next posts</h2>
-			<form class="subscribe-form">
-				<input type="email" placeholder="Enter your email" required></>
-				<button type="submit">Subscribe</button>
-			</form>
-		</div>
-	</section> -->
-
-	<!-- Subscribe Section -->
 	<section id="subscribe-section">
 		<div class="subscribe-container">
 			<h2>Don't miss next posts</h2>
@@ -131,44 +120,9 @@
 			<!-- This will hold the thank-you message -->
 			<p id="subscribe-message" style="color:white; display: none; margin-top: 10px;"></p>
 		</div>
-	
-		<script>
-			document.getElementById("subscribe-form").addEventListener("submit", function(e) {
-				e.preventDefault();
-	
-				const form = e.target;
-				const emailValue = form.email.value;
-	
-				// Clear the field instantly
-				form.email.value = "";
-	
-				// Show thank-you instantly
-				const messageEl = document.getElementById("subscribe-message");
-				messageEl.textContent = "Thanks for subscribing!";
-				messageEl.style.display = "block";
-				messageEl.style.opacity = "1"; // Reset opacity if reused
-	
-				// Hide message after 3 seconds with fade-out
-				setTimeout(() => {
-        messageEl.style.transition = "opacity 0.5s ease";
-        messageEl.style.opacity = "0";
-        setTimeout(() => {
-          messageEl.style.display = "none";
-        }, 500); // Wait for fade-out to finish
-      }, 3000);
-
-				// Send data in the background
-				fetch("https://script.google.com/macros/s/AKfycbyhE3fsPz6RFvlwuorsG6KcoyZ3q8gtTkZ6yQQDpMfKcxdh32AWETQ_5qS-jJNws7oezg/exec", {
-					method: "POST",
-					body: JSON.stringify({ email: emailValue })
-				})
-				.catch(err => {
-					console.error("Submission failed:", err);
-					messageEl.textContent = "Oops! Something went wrong. Please try again.";
-					messageEl.style.color = "red";
-				});
-			});
-		</script>
+		
+		<!-- Link external JS file (placed before closing body tag for better performance) -->
+		<script src="./java/subscribe.js"></script>
 	</section>
 	<!-- End Subscribe Section --> 
 	
