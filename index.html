@@ -146,8 +146,18 @@
 				const messageEl = document.getElementById("subscribe-message");
 				messageEl.textContent = "Thanks for subscribing!";
 				messageEl.style.display = "block";
+				messageEl.style.opacity = "1"; // Reset opacity if reused
 	
-				// Send data to Google Sheets in the background
+				// Hide message after 3 seconds with fade-out
+				setTimeout(() => {
+        messageEl.style.transition = "opacity 0.5s ease";
+        messageEl.style.opacity = "0";
+        setTimeout(() => {
+          messageEl.style.display = "none";
+        }, 500); // Wait for fade-out to finish
+      }, 3000);
+
+				// Send data in the background
 				fetch("https://script.google.com/macros/s/AKfycbyhE3fsPz6RFvlwuorsG6KcoyZ3q8gtTkZ6yQQDpMfKcxdh32AWETQ_5qS-jJNws7oezg/exec", {
 					method: "POST",
 					body: JSON.stringify({ email: emailValue })
