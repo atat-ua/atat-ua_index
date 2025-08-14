@@ -119,7 +119,7 @@
 			</form>
 		</div>
 	</section> -->
-	<!-- End Subscribe Section --> 
+
 	<form id="contactForm">
 		<input type="email" name="email" placeholder="Your email" required>
 		<button type="submit">Subscribe</button>
@@ -128,14 +128,29 @@
 	<script>
 	document.getElementById("contactForm").addEventListener("submit", function(e){
 		e.preventDefault();
+
+		const form = e.target;
+		const emailValue = form.email.value;
+
+		// 1. Clear the inputs immediately
+  	form.email.value = "";
+
+  	// 2. Show thank-you message immediately
+  	alert("Thanks for subscribing!");
+
+		// 3. Send the data in the background
 		fetch("https://script.google.com/macros/s/AKfycbyhE3fsPz6RFvlwuorsG6KcoyZ3q8gtTkZ6yQQDpMfKcxdh32AWETQ_5qS-jJNws7oezg/exec", {
 			method: "POST",
 			body: JSON.stringify({
 				email: e.target.email.value
 			})
-		}).then(r => alert("Thanks for subscribing!"));
+		})
+		.catch(err => {
+    console.error("Submission failed:", err);
+  	});
 	});
 	</script>
+	<!-- End Subscribe Section --> 
 	
 	<!-- Footer -->
 	<section id="footer">
