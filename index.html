@@ -119,6 +119,8 @@
 			</form>
 		</div>
 	</section> -->
+
+	<!-- Subscribe Section -->
 	<section id="subscribe-section">
 	<div class="subscribe-container">
 		<h2>Don't miss next posts</h2>
@@ -128,7 +130,7 @@
 		</form>
 	</div>
 	<script>
-	document.getElementById("subscribe-form").addEventListener("submit", function(e){
+	document.querySelector(".subscribe-form").addEventListener("submit", function(e){
 		e.preventDefault();
 
 		const form = e.target;
