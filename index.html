@@ -122,38 +122,43 @@
 
 	<!-- Subscribe Section -->
 	<section id="subscribe-section">
-	<div class="subscribe-container">
-		<h2>Don't miss next posts</h2>
-		<form class="subscribe-form">
-			<input type="email" name="email" placeholder="Your email" required>
-			<button type="submit">Subscribe</button>
-		</form>
-	</div>
-	<script>
-	document.querySelector(".subscribe-form").addEventListener("submit", function(e){
-		e.preventDefault();
-
-		const form = e.target;
-		const emailValue = form.email.value;
-
-		// 1. Clear the inputs immediately
-  	form.email.value = "";
-
-  	// 2. Show thank-you message immediately
-  	alert("Thanks for subscribing!");
-
-		// 3. Send the data in the background
-		fetch("https://script.google.com/macros/s/AKfycbyhE3fsPz6RFvlwuorsG6KcoyZ3q8gtTkZ6yQQDpMfKcxdh32AWETQ_5qS-jJNws7oezg/exec", {
-			method: "POST",
-			body: JSON.stringify({
-				email: emailValue
-			})
-		})
-		.catch(err => {
-    console.error("Submission failed:", err);
-  	});
-	});
-	</script>
+		<div class="subscribe-container">
+			<h2>Don't miss next posts</h2>
+			<form id="subscribe-form" class="subscribe-form">
+				<input type="email" name="email" placeholder="Your email" required>
+				<button type="submit">Subscribe</button>
+			</form>
+			<!-- This will hold the thank-you message -->
+			<p id="subscribe-message" style="color: green; display: none; margin-top: 10px;"></p>
+		</div>
+	
+		<script>
+			document.getElementById("subscribe-form").addEventListener("submit", function(e) {
+				e.preventDefault();
+	
+				const form = e.target;
+				const emailValue = form.email.value;
+	
+				// Clear the field instantly
+				form.email.value = "";
+	
+				// Show thank-you instantly
+				const messageEl = document.getElementById("subscribe-message");
+				messageEl.textContent = "Thanks for subscribing!";
+				messageEl.style.display = "block";
+	
+				// Send data to Google Sheets in the background
+				fetch("https://script.google.com/macros/s/AKfycbyhE3fsPz6RFvlwuorsG6KcoyZ3q8gtTkZ6yQQDpMfKcxdh32AWETQ_5qS-jJNws7oezg/exec", {
+					method: "POST",
+					body: JSON.stringify({ email: emailValue })
+				})
+				.catch(err => {
+					console.error("Submission failed:", err);
+					messageEl.textContent = "Oops! Something went wrong. Please try again.";
+					messageEl.style.color = "red";
+				});
+			});
+		</script>
 	</section>
 	<!-- End Subscribe Section --> 
 	
