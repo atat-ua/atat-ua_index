@@ -12,7 +12,7 @@ document.getElementById("subscribe-form").addEventListener("submit", function(e)
   messageEl.textContent = "Thanks for subscribing!";
   messageEl.style.display = "block";
   messageEl.style.opacity = "1";
-  messageEl.style.color = "green"; // reset color in case of previous error
+  messageEl.style.color = "white"; // reset color in case of previous error
 
   // Hide message after 3 seconds with fade-out
   setTimeout(() => {
