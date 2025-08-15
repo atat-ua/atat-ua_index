@@ -1,5 +1,5 @@
 // === CONFIG ===
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwPDRj-yEHYx2elukKIttVonvOPYkznA0P5k6ilV0pGpgFNiCqUqyti1aVET-oGCL7T/exec"; // <-- paste your Apps Script Web App URL
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwPDRj-yEHYx2elukKIttVonvOPYkznA0P5k6ilV0pGpgFNiCqUqyti1aVET-oGCL7T/exec"; //
 
 // === ELEMENTS ===
 const form = document.querySelector(".comment-form");
