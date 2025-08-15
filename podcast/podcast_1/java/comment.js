@@ -1,69 +1,128 @@
-const commentForm = document.querySelector(".comment-form");
-const commentList = document.getElementById("comment-list");
+// === CONFIG ===
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwPDRj-yEHYx2elukKIttVonvOPYkznA0P5k6ilV0pGpgFNiCqUqyti1aVET-oGCL7T/exec"; // <-- paste your Apps Script Web App URL
 
-// URL of your Google Apps Script deployment
-const SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL";
+// === ELEMENTS ===
+const form = document.querySelector(".comment-form");
+const list = document.getElementById("comment-list");
 
-// Fetch and display comments
+// Escape HTML to avoid XSS when rendering user content
+function escapeHTML(str) {
+  return (str || "").replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
+}
+
+// Build a map: parentId -> replies[]
+function groupByParent(comments) {
+  const byParent = {};
+  comments.forEach(c => {
+    const key = c.parentId || '';
+    (byParent[key] ||= []).push(c);
+  });
+  return byParent;
+}
+
+function renderComment(c, repliesMap) {
+  const replies = (repliesMap[c.id] || []).sort((a,b) => b.timestamp - a.timestamp);
+  return `
+    <div class="comment-item" data-id="${c.id}">
+      <p class="comment-meta"><strong>${escapeHTML(c.name)}</strong> • ${new Date(c.timestamp).toLocaleString()}</p>
+      <p class="comment-text">${escapeHTML(c.text)}</p>
+      <button class="reply-btn" data-id="${c.id}">Reply</button>
+      <div class="replies" id="replies-${c.id}">
+        ${replies.map(r => `
+          <div class="reply-item" data-id="${r.id}">
+            <p class="comment-meta"><strong>${escapeHTML(r.name)}</strong> • ${new Date(r.timestamp).toLocaleString()}</p>
+            <p class="comment-text">${escapeHTML(r.text)}</p>
+          </div>
+        `).join("")}
+      </div>
+    </div>
+  `;
+}
+
 async function loadComments() {
-  commentList.innerHTML = "<p>Loading comments...</p>";
+  list.innerHTML = "<p>Loading comments…</p>";
   try {
     const res = await fetch(SCRIPT_URL);
-    const comments = await res.json();
+    const data = await res.json();
 
-    // Sort newest first
-    comments.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+    // Sort newest-first globally
+    data.sort((a, b) => b.timestamp - a.timestamp);
 
-    // Render comments
-    commentList.innerHTML = comments.map(comment => `
-      <div class="comment-item">
-        <p><strong>${comment.name}</strong> • ${new Date(comment.timestamp).toLocaleString()}</p>
-        <p>${comment.text}</p>
-        <button class="reply-btn" data-id="${comment.id}">Reply</button>
-        ${comment.isAdmin ? `<button class="delete-btn" data-id="${comment.id}">Delete</button>` : ""}
-        <div class="replies">
-          ${(comment.replies || []).map(reply => `
-            <div class="reply-item">
-              <p><strong>${reply.name}</strong> • ${new Date(reply.timestamp).toLocaleString()}</p>
-              <p>${reply.text}</p>
-            </div>
-          `).join("")}
-        </div>
-      </div>
-    `).join("");
+    // Group replies under parents
+    const byParent = groupByParent(data);
+    const parents = (byParent[''] || []).sort((a,b) => b.timestamp - a.timestamp);
+
+    list.innerHTML = parents.map(p => renderComment(p, byParent)).join("");
   } catch (err) {
-    commentList.innerHTML = "<p>Failed to load comments.</p>";
     console.error(err);
+    list.innerHTML = "<p>Failed to load comments.</p>";
   }
 }
 
-// Handle comment submission
-commentForm.addEventListener("submit", async e => {
+// Submit top-level comment
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
-
-  const name = commentForm.name.value.trim();
-  const email = commentForm.email.value.trim();
-  const text = commentForm.comment.value.trim();
-
+  const name = form.name.value.trim();
+  const email = form.email.value.trim();
+  const text = form.comment.value.trim();
   if (!name || !email || !text) return;
 
-  // Clear form instantly
-  commentForm.comment.value = "";
-  commentForm.name.value = "";
-  commentForm.email.value = "";
+  // Clear immediately for snappy UX
+  form.comment.value = "";
+  form.name.value = "";
+  form.email.value = "";
 
-  // Send to backend
   try {
+    // No custom headers -> avoids CORS preflight; we don't need to read the response
     await fetch(SCRIPT_URL, {
       method: "POST",
-      body: JSON.stringify({ name, email, text }),
-      headers: { "Content-Type": "application/json" }
+      body: JSON.stringify({ name, email, text }) 
     });
     loadComments();
   } catch (err) {
-    console.error("Error posting comment:", err);
+    console.error("Post failed:", err);
   }
 });
 
-// Initial load
+// Reply UI + submit
+document.addEventListener("click", (e) => {
+  // Open a reply box
+  if (e.target.matches(".reply-btn")) {
+    const parentId = e.target.dataset.id;
+    const already = document.getElementById(`replybox-${parentId}`);
+    if (already) { already.querySelector("textarea").focus(); return; }
+
+    const box = document.createElement("div");
+    box.className = "reply-box";
+    box.id = `replybox-${parentId}`;
+    box.innerHTML = `
+      <textarea class="reply-text" rows="3" placeholder="Write a reply…"></textarea>
+      <input class="reply-name" type="text" placeholder="Your name">
+      <input class="reply-email" type="email" placeholder="Your email">
+      <button class="send-reply" data-parent="${parentId}">Publish reply</button>
+    `;
+    e.target.insertAdjacentElement("afterend", box);
+  }
+
+  // Submit the reply
+  if (e.target.matches(".send-reply")) {
+    const parentId = e.target.dataset.parent;
+    const box = e.target.closest(".reply-box");
+    const text = box.querySelector(".reply-text").value.trim();
+    const name = box.querySelector(".reply-name").value.trim();
+    const email = box.querySelector(".reply-email").value.trim();
+    if (!name || !email || !text) return;
+
+    // Clear fast, then send
+    box.remove();
+    fetch(SCRIPT_URL, {
+      method: "POST",
+      body: JSON.stringify({ name, email, text, parentId })
+    })
+    .then(() => loadComments())
+    .catch(err => console.error("Reply failed:", err));
+  }
+});
+
+// Load on page ready
 loadComments();
