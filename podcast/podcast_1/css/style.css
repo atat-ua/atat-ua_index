@@ -262,6 +262,50 @@ p{
 }
 /* End Comment Section */
 
+.comment-list { margin-top: 2rem; }
+
+.comment-item, .reply-item {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.comment-meta {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.comment-text {
+  color: #111;
+  font-size: 1.1rem;
+  white-space: pre-wrap; /* keep line breaks */
+}
+
+.reply-btn, .send-reply {
+  margin-top: 0.5rem;
+  background: #00bf63;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+}
+
+.reply-box {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.replies {
+  margin-top: 0.6rem;
+  margin-left: 1.2rem;
+  border-left: 3px solid #ccc;
+  padding-left: 0.8rem;
+}
+
 /*---------------------------------- Subscribe Section ------------------------------------*/
 #subscribe-section {
 	height: 25vh;
