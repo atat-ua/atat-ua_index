@@ -262,48 +262,75 @@ p{
 }
 /* End Comment Section */
 
-.comment-list { margin-top: 2rem; }
+/* === Comment List Styles === */
+.comment-list {
+  margin-top: 2rem;
+}
 
 .comment-item, .reply-item {
-  background: #fff;
-  padding: 1rem;
+  background-color: white;
   border-radius: 8px;
+  padding: 1rem 1.2rem;
   margin-bottom: 1rem;
+  border: 1px solid #ccc;
 }
 
 .comment-meta {
-  color: #333;
   font-size: 1rem;
-  margin-bottom: 0.5rem;
+  color: #555;
+  margin-bottom: 0.4rem;
 }
 
 .comment-text {
-  color: #111;
-  font-size: 1.1rem;
-  white-space: pre-wrap; /* keep line breaks */
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
-.reply-btn, .send-reply {
-  margin-top: 0.5rem;
-  background: #00bf63;
-  color: #fff;
+.reply-btn {
+  background: transparent;
   border: none;
-  border-radius: 6px;
-  padding: 0.4rem 0.7rem;
+  color: #00bf63;
   cursor: pointer;
-}
-
-.reply-box {
-  display: grid;
-  gap: 0.5rem;
-  margin-top: 0.8rem;
+  font-size: 1rem;
+  padding: 0;
 }
 
 .replies {
-  margin-top: 0.6rem;
-  margin-left: 1.2rem;
-  border-left: 3px solid #ccc;
-  padding-left: 0.8rem;
+  margin-left: 2rem;
+  margin-top: 0.5rem;
+}
+
+.reply-box {
+  margin-top: 0.5rem;
+  background: #f7f7f7;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.reply-box textarea,
+.reply-box input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+.reply-box button {
+  padding: 0.6rem 1rem;
+  background-color: #00bf63;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.reply-box button:hover {
+  background-color: #009e52;
 }
 
 /*---------------------------------- Subscribe Section ------------------------------------*/

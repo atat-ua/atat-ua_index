@@ -1,16 +1,16 @@
 // === CONFIG ===
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwPDRj-yEHYx2elukKIttVonvOPYkznA0P5k6ilV0pGpgFNiCqUqyti1aVET-oGCL7T/exec"; //
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwPDRj-yEHYx2elukKIttVonvOPYkznA0P5k6ilV0pGpgFNiCqUqyti1aVET-oGCL7T/exec";
 
 // === ELEMENTS ===
 const form = document.querySelector(".comment-form");
 const list = document.getElementById("comment-list");
 
-// Escape HTML to avoid XSS when rendering user content
+// Escape HTML to avoid XSS
 function escapeHTML(str) {
   return (str || "").replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
 }
 
-// Build a map: parentId -> replies[]
+// Group comments by parentId
 function groupByParent(comments) {
   const byParent = {};
   comments.forEach(c => {
@@ -20,6 +20,7 @@ function groupByParent(comments) {
   return byParent;
 }
 
+// Render a comment and its replies
 function renderComment(c, repliesMap) {
   const replies = (repliesMap[c.id] || []).sort((a,b) => b.timestamp - a.timestamp);
   return `
@@ -39,16 +40,15 @@ function renderComment(c, repliesMap) {
   `;
 }
 
+// Load all comments from the Google Script
 async function loadComments() {
   list.innerHTML = "<p>Loading comments…</p>";
   try {
     const res = await fetch(SCRIPT_URL);
     const data = await res.json();
 
-    // Sort newest-first globally
-    data.sort((a, b) => b.timestamp - a.timestamp);
+    data.sort((a,b) => b.timestamp - a.timestamp); // newest first globally
 
-    // Group replies under parents
     const byParent = groupByParent(data);
     const parents = (byParent[''] || []).sort((a,b) => b.timestamp - a.timestamp);
 
@@ -67,13 +67,12 @@ form.addEventListener("submit", async (e) => {
   const text = form.comment.value.trim();
   if (!name || !email || !text) return;
 
-  // Clear immediately for snappy UX
+  // Clear fields immediately
   form.comment.value = "";
   form.name.value = "";
   form.email.value = "";
 
   try {
-    // No custom headers -> avoids CORS preflight; we don't need to read the response
     await fetch(SCRIPT_URL, {
       method: "POST",
       body: JSON.stringify({ name, email, text }) 
@@ -84,9 +83,8 @@ form.addEventListener("submit", async (e) => {
   }
 });
 
-// Reply UI + submit
+// Reply box UI and submit
 document.addEventListener("click", (e) => {
-  // Open a reply box
   if (e.target.matches(".reply-btn")) {
     const parentId = e.target.dataset.id;
     const already = document.getElementById(`replybox-${parentId}`);
@@ -104,7 +102,6 @@ document.addEventListener("click", (e) => {
     e.target.insertAdjacentElement("afterend", box);
   }
 
-  // Submit the reply
   if (e.target.matches(".send-reply")) {
     const parentId = e.target.dataset.parent;
     const box = e.target.closest(".reply-box");
@@ -113,7 +110,6 @@ document.addEventListener("click", (e) => {
     const email = box.querySelector(".reply-email").value.trim();
     if (!name || !email || !text) return;
 
-    // Clear fast, then send
     box.remove();
     fetch(SCRIPT_URL, {
       method: "POST",
@@ -124,5 +120,5 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// Load on page ready
+// Initial load
 loadComments();
