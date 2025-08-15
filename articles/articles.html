@@ -110,13 +110,18 @@
 	<section id="subscribe-section">
 		<div class="subscribe-container">
 			<h2>Don't miss next posts</h2>
-			<form class="subscribe-form">
-				<input type="email" placeholder="Enter your email" required></>
+			<form id="subscribe-form" class="subscribe-form">
+				<input type="email" name="email" placeholder="Your email" required>
 				<button type="submit">Subscribe</button>
 			</form>
+			<!-- This will hold the thank-you message -->
+			<p id="subscribe-message" style="color:white; display: none; margin-top: 10px;"></p>
 		</div>
+		
+		<!-- Link external JS file (placed before closing body tag for better performance) -->
+		<script src="./java/subscribe.js"></script>
 	</section>
-	<!-- End Subscribe Section -->
+	<!-- End Subscribe Section --> 
 	
 	<!-- Footer -->
 	<section id="footer">
