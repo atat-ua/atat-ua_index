@@ -131,6 +131,11 @@
 	<!-- Comment Section -->
 	<section id="comment-section">
   	<div class="comment-container">
+			<!-- This is where comments will be rendered -->
+			<div id="comment-list" class="comment-list"></div>
+			<!-- Load the comment JS (put near the end of body or use defer) -->
+			<script src="comment.js" defer></script>
+
     	<h2>Leave a comment</h2>
 
     	<form class="comment-form">
@@ -147,11 +152,6 @@
 
       	<button type="submit">Publish comment</button>
     	</form>
-
-			<!-- This is where comments will be rendered -->
-			<div id="comment-list" class="comment-list"></div>
-			<!-- Load the comment JS (put near the end of body or use defer) -->
-			<script src="comment.js" defer></script>
   	</div>
 	</section>
 	<!-- End Comment section -->
