@@ -1,5 +1,5 @@
 // === CONFIG ===
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwPDRj-yEHYx2elukKIttVonvOPYkznA0P5k6ilV0pGpgFNiCqUqyti1aVET-oGCL7T/exec";
+const SCRIPT_URL = "https://my-comment-proxy.victor-83f.workers.dev/";
 
 // === ELEMENTS ===
 const form = document.querySelector(".comment-form");
